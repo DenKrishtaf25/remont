@@ -1,0 +1,56 @@
+<section class="prices" id="prices">
+    <div class="container">
+        <h2 class="prices__title title">
+            цены<br/>
+            <span>
+                на ремонт</span>
+        </h2>
+        <div class="prices__wrapper">
+            <div class="prices__map">
+                <h3 class="prices__map-title">Типы ремонта</h3>
+                {% for item in prices %}
+                    {% if item.title %}
+                        <a class="prices__map-item" href="#section-{{ loop.index }}">
+                            {{ item.title }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="prices__table">
+                {% for item in prices %}
+                    <div class="prices__table-wrapper" id="section-{{ loop.index }}">
+                        {% if item.title %}
+                            <h3 class="prices__table-title">
+                                {{ item.title }}
+                            </h3>
+                        {% endif %}
+                        {% for type in item.types %}
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    {{ type.flat }}
+                                </div>
+                                <div class="prices__table-item square">
+                                    {{ type.square }}
+                                </div>
+                                <div class="prices__table-item price">
+                                    {{ type.price }}
+                                </div>
+                                <div class="prices__table-item cost">
+                                    {{ type.cost }}
+                                </div>
+                                <div class="prices__table-item total">
+                                    {{ type.total }}
+                                </div>
+                                <div class="prices__table-item time">
+                                    {{ type.time }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/scripts/prices.js"></script>

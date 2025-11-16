@@ -1,0 +1,25 @@
+<section class="advantages">
+    <div class="container">
+        <h2 class="advantages__title title">
+            Почему<br/>
+            <span>выбирают меня</span>
+        </h2>
+        <div class="advantages__collection">
+            {% for item in advantages %}
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="{{ item.icon }}" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            {{ item.title }}
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        {{ item.text }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

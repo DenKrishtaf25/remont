@@ -1,0 +1,134 @@
+.prices__title span {
+    color: var(--orange);
+}
+
+.prices__wrapper {
+    display: flex;
+    gap: 24px;
+}
+
+.prices__map {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 20%;
+}
+
+.prices__map-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 16px;
+}
+
+.prices__map-item {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.2s, color 0.2s;
+}
+
+.prices__map-item:hover {
+    background: #f0f0f0;
+}
+
+.prices__map-item.active {
+    background: var(--orange);
+    color: #fff;
+    font-weight: 500;
+}
+
+
+.prices__table {
+    width: 100%;
+    max-width: 80%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    overflow-x: auto;
+    position: relative;
+    border: 1px solid var(--gray-lighter);
+    border-radius: 12px;
+    scroll-behavior: smooth;
+}
+
+.prices__table-wrapper#section-1 {
+    position: sticky;
+    top: 0;
+    background: #f0f0f0;
+    width: fit-content
+}
+
+.prices__table-wrapper:last-child {
+    min-height: 100%;
+}
+
+.prices__table-row {
+    display: flex;
+    justify-content: space-between;
+    min-height: 40px;
+    min-width: 860px;
+    border-bottom: 1px solid var(--gray-lighter);
+}
+
+.prices__table-row:nth-child(2n) {
+    background-color: #fafafa;
+}
+
+.prices__table-title {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--orange);
+    border-bottom: 1px solid var(--gray-lighter);
+    min-width: 860px;
+}
+
+.prices__table-item {
+    border-right: 1px solid var(--gray-lighter);
+    padding: 10px 14px;
+    width: calc(100% / 6);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+}
+
+.prices__table-item.flat {
+    justify-content: flex-start;
+}
+
+@media (max-width: 1200px) {
+    .prices__map {
+        display: none;
+    }
+
+    .prices__table {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 950px) {
+    .prices__table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .prices__table-row {
+        min-width: 860px;
+    }
+
+    .prices__table-wrapper:last-child {
+        min-height: inherit;
+    }
+
+    .prices__table-title {
+        text-align: left;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+}
