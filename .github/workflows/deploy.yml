@@ -1,6 +1,5 @@
-name: Deploy to Selectel
+name: Deploy to Selectel S3
 
-# Запускается при пуше в ветку master
 on:
   push:
     branches:
@@ -11,21 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Сначала забираем файлы из репозитория
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      # Устанавливаем и настраиваем s3cmd для работы с Selectel
-      - name: Sync files to Selectel
-        env:
-          ACCESS_KEY: ${{ secrets.SELECTEL_ACCESS_KEY }}
-          SECRET_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
-          BUCKET: ${{ secrets.SELECTEL_BUCKET }}
-          REGION: ${{ secrets.SELECTEL_REGION }}
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build 11ty site
+        run: npx eleventy
+
+      - name: Install AWS CLI
         run: |
           sudo apt-get update
-          sudo apt-get install -y s3cmd
-          
-          # Синхронизация файлов в бакет
-          s3cmd --access_key=$ACCESS_KEY --secret_key=$SECRET_KEY \
-                --host=storage.selcdn.ru --host-bucket="%s.storage.selcdn.ru" \
-                sync ./ s3://$BUCKET/ --delete-removed
+          sudo apt-get install -y awscli
+
+      - name: Upload to Selectel S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
+        run: |
+          aws s3 sync ./_site s3://remont-files \
+            --endpoint-url https://s3.ru-7.storage.selcloud.ru \
+            --no-verify-ssl \
+            --delete
