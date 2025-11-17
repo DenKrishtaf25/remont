@@ -24,12 +24,9 @@ jobs:
       - name: Build 11ty site
         run: npx eleventy
 
-      # === FIX: корректная установка AWS CLI ===
-      - name: Install AWS CLI manually
+      - name: Check preinstalled AWS CLI
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+          which aws || true
           aws --version
 
       - name: Upload to Selectel S3
