@@ -1,21 +1,31 @@
-# .github/workflows/deploy.yml
-name: Deploy to Selectel S3
+name: Deploy to Selectel
+
+# Запускается при пуше в ветку master
 on:
   push:
     branches:
-      - main
+      - master
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Сначала забираем файлы из репозитория
       - uses: actions/checkout@v3
-      - uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --acl public-read --follow-symlinks
+
+      # Устанавливаем и настраиваем s3cmd для работы с Selectel
+      - name: Sync files to Selectel
         env:
-          AWS_S3_BUCKET: ${{ secrets.BUCKET_NAME }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ru-7
-          SOURCE_DIR: "./"
-          DEST_DIR: "/"
+          ACCESS_KEY: ${{ secrets.SELECTEL_ACCESS_KEY }}
+          SECRET_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
+          BUCKET: ${{ secrets.SELECTEL_BUCKET }}
+          REGION: ${{ secrets.SELECTEL_REGION }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y s3cmd
+          
+          # Синхронизация файлов в бакет
+          s3cmd --access_key=$ACCESS_KEY --secret_key=$SECRET_KEY \
+                --host=storage.selcdn.ru --host-bucket="%s.storage.selcdn.ru" \
+                sync ./ s3://$BUCKET/ --delete-removed
