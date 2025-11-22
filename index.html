@@ -11,17 +11,669 @@
 </head>
 
 <body>
-    {% include "layouts/header.njk" %}
+    <header class="header">
+    <div class="container">
+        <div class="header__left">
+            <!-- <div class="burger">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div> -->
+            <div class="header__left-wrapper">
+                <a
+                    href="tel:+79998248392"
+                    class="header__phone header-btn"
+                >
+                    <img src="/img/layouts/phone.svg" alt="">
+                    <span>+7 (999) 824-83-92</span>
+                </a>
+                <p>Ежедневно с 9:00 до 19:00</p>
+            </div>
+        </div>
+        <div class="header__right">
+            <p>Задайте вопрос</p>
+            <div class="header__right-wrapper">
+                <a
+                    href="https://wa.me/79998248392"
+                    class="header__cta header-btn"
+                >
+                    <img src="/img/layouts/whatsapp.svg" alt="">
+                    <span>Whatsapp</span>
+                </a>
+                <a
+                    href="https://t.me/+79998248392"
+                    class="header__cta header-btn"
+                >
+                    <img src="/img/layouts/telegram.svg" alt="">
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>    
+    </div>
+</header>
 14
-    {% include "blocks/offer.njk" %}
+    <section class="offer">
+    <div class="bg-1">
+        <img src="/img/offer/bg1.png" alt="">
+    </div>
+    <div class="bg-2">
+        <img src="/img/offer/bg2.png" alt="">
+    </div>
+    <div class="bg-3">
+        <img src="/img/offer/bg3.png" alt="">
+    </div>
+    <div class="container">
+        <h1 class="offer__title title">
+            <span class="offer__title-top">
+                <div class="offer__title-top-right">
+                    <p class="profession">профессиональный</p>
+                    <span>Ремонт квартир</span>
+                </div>
+            </span>
+            <span class="offer__title-bottom">
+                <div class="offer__title-bottom-wrapper">
+                    <span>под ключ</span>
+                    <p class="offer__subtitle">
+                        без посредников
+                    </p>
+                </div>
+                <div class="offer__bottom">
+                    <p>в Москве и Московской области</p>
+                    <a href="#prices">Посмотреть цены</a>
+                </div>
+            </span>
+        </h1>
+    </div>
+</section>
 
-    {% include "blocks/advantages.njk" %}
+    <section class="advantages">
+    <div class="container">
+        <h2 class="advantages__title title">
+            Почему<br/>
+            <span>выбирают меня</span>
+        </h2>
+        <div class="advantages__collection">
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/star.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Более 20 лет опыта
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        Работаю сам, без посредников и наёмных бригад - качество на совести одного мастера
+                    </p>
+                </div>
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/key.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Как “под ключ” так и частично
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        У меня можно заказать весь проект от замеров до финальной уборки, а можно заказать только нужные этапы
+                    </p>
+                </div>
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/trust.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Без предоплаты
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        Оплата только по факту сделанных работ
+                    </p>
+                </div>
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/price.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Честные цены
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        Я делаю красиво, надолго и без накруток
+                    </p>
+                </div>
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/help.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Помощь с материалами
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        Я отлично разбираюсь в нюансах качества и совместимости материалов и помогу выбрать наиболее подходящий под ваш случай. Также готов помочь с закупкой
+                    </p>
+                </div>
+            
+                <div class="advantage">
+                    <div class="advantage__wrapper">
+                        <div class="advantage__icon">
+                            <img src="/img/advantages/doc.svg" alt="">
+                        </div>
+                        <h3 class="advantage__title title">
+                            Смета сразу после замеров
+                        </h3>
+                    </div>
+                    <p class="advantage__descr">
+                        Никаких сюрпризов и непонятных доплат
+                    </p>
+                </div>
+            
+        </div>
+    </div>
+</section>
 
-    <!-- {% include "blocks/portfolio.njk" %} -->
+    <!-- <section class="prices">
+    <div class="container">
+        <h2 class="prices__title title">
+            мои<br/>
+            <span>
+                работы</span>
+        </h2>
+        <div class="prices__wrapper">
+        </div>
+    </div>
+</section> -->
 
-    {% include "blocks/prices.njk" %}
+    <section class="prices" id="prices">
+    <div class="container">
+        <h2 class="prices__title title">
+            цены<br/>
+            <span>
+                на ремонт</span>
+        </h2>
+        <div class="prices__wrapper">
+            <div class="prices__map">
+                <h3 class="prices__map-title">Типы ремонта</h3>
+                
+                    
+                
+                    
+                        <a class="prices__map-item" href="#section-2">
+                            Косметический ремонт
+                        </a>
+                    
+                
+                    
+                        <a class="prices__map-item" href="#section-3">
+                            Капитальный ремонт
+                        </a>
+                    
+                
+                    
+                        <a class="prices__map-item" href="#section-4">
+                            Ремонт white-box
+                        </a>
+                    
+                
+                    
+                        <a class="prices__map-item" href="#section-5">
+                            Ремонт в новостройке
+                        </a>
+                    
+                
+            </div>
+            <div class="prices__table">
+                
+                    <div class="prices__table-wrapper" id="section-1">
+                        
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Квартира
+                                </div>
+                                <div class="prices__table-item square">
+                                    Площадь
+                                </div>
+                                <div class="prices__table-item price">
+                                    Черновые материалы
+                                </div>
+                                <div class="prices__table-item cost">
+                                    Стоимость работ
+                                </div>
+                                <div class="prices__table-item total">
+                                    Итого
+                                </div>
+                                <div class="prices__table-item time">
+                                    Сроки ремонта
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="prices__table-wrapper" id="section-2">
+                        
+                            <h3 class="prices__table-title">
+                                Косметический ремонт
+                            </h3>
+                        
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Студия
+                                </div>
+                                <div class="prices__table-item square">
+                                    22 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    10.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    94.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    104.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 1 месяца
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Однокомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    40 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    15.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    160.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    175.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    До 1,5 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Двухкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    65 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    30.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    260.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    290.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    До 2 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Трехкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    80 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    67.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    320.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    387.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5 месяцев
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="prices__table-wrapper" id="section-3">
+                        
+                            <h3 class="prices__table-title">
+                                Капитальный ремонт
+                            </h3>
+                        
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Студия
+                                </div>
+                                <div class="prices__table-item square">
+                                    22 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    100.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    253.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    353.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Однокомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    40 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    125.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    418.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    543.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Двухкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    65 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    225.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    750.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    975.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 3 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Трехкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    80 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    300.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    960.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    1.260.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 3,5 месяцев
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="prices__table-wrapper" id="section-4">
+                        
+                            <h3 class="prices__table-title">
+                                Ремонт white-box
+                            </h3>
+                        
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Студия
+                                </div>
+                                <div class="prices__table-item square">
+                                    22 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    14.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    92.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    106.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    До 1,5 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Однокомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    40 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    17.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    158.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    175.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    До 1,5 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Двухкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    65 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    35.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    256.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    291.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    До 2 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Трехкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    80 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    55.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    310.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    365.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5 месяцев
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+                    <div class="prices__table-wrapper" id="section-5">
+                        
+                            <h3 class="prices__table-title">
+                                Ремонт в новостройке
+                            </h3>
+                        
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Студия
+                                </div>
+                                <div class="prices__table-item square">
+                                    22 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    100.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    253.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    353.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Однокомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    40 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    125.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    418.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    543.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 2,5 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Двухкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    65 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    225.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    750.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    975.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 3 месяцев
+                                </div>
+                            </div>
+                        
+                            <div class="prices__table-row">
+                                <div class="prices__table-item flat">
+                                    Трехкомнатная
+                                </div>
+                                <div class="prices__table-item square">
+                                    80 м²
+                                </div>
+                                <div class="prices__table-item price">
+                                    300.000 руб.
+                                </div>
+                                <div class="prices__table-item cost">
+                                    960.000 руб.
+                                </div>
+                                <div class="prices__table-item total">
+                                    1.260.000 руб.
+                                </div>
+                                <div class="prices__table-item time">
+                                    до 3,5 месяцев
+                                </div>
+                            </div>
+                        
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
 
-    {% include "layouts/footer.njk" %}
+<script src="/scripts/prices.js"></script>
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__left">
+            <div class="footer__left-wrapper">
+                <a
+                    href="tel:+79998248392"
+                    class="footer__phone footer-btn"
+                >
+                    <img src="/img/layouts/phone.svg" alt="">
+                    <span>+7 (999) 824-83-92</span>
+                </a>
+                <p>Ежедневно с 9:00 до 19:00</p>
+            </div>
+        </div>
+        <div class="footer__right">
+            <p>Задайте вопрос</p>
+            <div class="footer__right-wrapper">
+                <a
+                    href="https://wa.me/79998248392"
+                    class="footer__cta footer-btn"
+                >
+                    <img src="/img/layouts/whatsapp.svg" alt="">
+                    <span>Whatsapp</span>
+                </a>
+                <a
+                    href="https://t.me/+79998248392"
+                    class="footer__cta footer-btn"
+                >
+                    <img src="/img/layouts/telegram.svg" alt="">
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>    
+    </div>
+</footer>
 </body>
 
 </html>

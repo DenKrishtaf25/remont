@@ -1,2 +1,11 @@
 _site/
 node_modules/
+
+# Сгенерированные файлы в корне
+/index.html
+/styles/
+/img/
+/fonts/
+/scripts/
+/_includes/
+/_data/

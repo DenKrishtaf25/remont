@@ -31,6 +31,6 @@ jobs:
           username: ${{ secrets.REMONT_SSH_USER }}
           key: ${{ secrets.REMONT_SSH_KEY }}
           port: 22
-          source: "_site/*"
+          source: "./*"
           target: ${{ secrets.REMONT_SSH_PATH }}
           rm: true

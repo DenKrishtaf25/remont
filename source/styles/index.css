@@ -1,0 +1,10 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+@import url('./common.css');
+
+@import url('./layouts/header.css');
+@import url('./layouts/footer.css');
+
+@import url('./blocks/offer.css');
+@import url('./blocks/advantages.css');
+@import url('./blocks/prices.css');

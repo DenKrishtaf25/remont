@@ -1,16 +1,16 @@
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("styles");
-    eleventyConfig.addPassthroughCopy("img");
-    eleventyConfig.addPassthroughCopy("fonts");
-    eleventyConfig.addPassthroughCopy("scripts");
+    eleventyConfig.addPassthroughCopy("source/styles");
+    eleventyConfig.addPassthroughCopy("source/img");
+    eleventyConfig.addPassthroughCopy("source/fonts");
+    eleventyConfig.addPassthroughCopy("source/scripts");
 
     return {
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",
         dataTemplateEngine: "njk",
         dir: {
-            input: ".",
-            output: "_site",
+            input: "source",
+            output: ".",
             includes: "_includes",
             data: "_data"
         }
