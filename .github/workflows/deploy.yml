@@ -1,4 +1,46 @@
-name: Deploy to Selectel S3
+# name: Deploy to Selectel S3
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v3
+
+#       - name: Install Node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build 11ty site
+#         run: npx eleventy
+
+#       - name: Check preinstalled AWS CLI
+#         run: |
+#           which aws || true
+#           aws --version
+
+#       - name: Upload to Selectel S3
+#         env:
+#           AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_ACCESS_KEY }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
+#         run: |
+#           aws s3 sync ./_site s3://remont-files \
+#             --endpoint-url https://s3.ru-7.storage.selcloud.ru \
+#             --no-verify-ssl \
+#             --delete
+
+
+name: Deploy to Server
 
 on:
   push:
@@ -10,31 +52,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.1
         with:
-          node-version: 18
+          ssh-private-key: ${{ secrets.REMONT_SSH_KEY }}
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build 11ty site
-        run: npx eleventy
-
-      - name: Check preinstalled AWS CLI
+      - name: Deploy to server
         run: |
-          which aws || true
-          aws --version
-
-      - name: Upload to Selectel S3
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SELECTEL_SECRET_KEY }}
-        run: |
-          aws s3 sync ./_site s3://remont-files \
-            --endpoint-url https://s3.ru-7.storage.selcloud.ru \
-            --no-verify-ssl \
-            --delete
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMONT_SSH_USER }}@${{ secrets.REMONT_SSH_HOST }} << 'EOF'
+            cd ${{ secrets.REMONT_SSH_PATH }}
+            git pull origin main
+            # здесь можно добавить команды сборки/перезапуска сервера
+          EOF
