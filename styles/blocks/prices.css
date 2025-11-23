@@ -57,7 +57,6 @@
     position: sticky;
     top: 0;
     background: #f0f0f0;
-    width: fit-content
 }
 
 .prices__table-wrapper:last-child {
@@ -130,5 +129,9 @@
         text-align: left;
         justify-content: flex-start;
         padding-left: 20px;
+    }
+
+    .prices__table-wrapper#section-1 {
+        width: fit-content;
     }
 }
