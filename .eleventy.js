@@ -3,6 +3,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("source/img");
     eleventyConfig.addPassthroughCopy("source/fonts");
     eleventyConfig.addPassthroughCopy("source/scripts");
+    eleventyConfig.addPassthroughCopy("source/robots.txt");
+    eleventyConfig.addPassthroughCopy("source/sitemap.xml");
 
     return {
         markdownTemplateEngine: "njk",

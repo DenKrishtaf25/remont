@@ -5,23 +5,103 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/img/icon.svg" />
-    <title>Ремонт квартир в Москве</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Ремонт квартир в Москве под ключ | Профессиональный мастер с 20+ летним опытом</title>
+    <meta name="title" content="Ремонт квартир в Москве под ключ | Профессиональный мастер с 20+ летним опытом" />
+    <meta name="description" content="Профессиональный ремонт квартир в Москве и Московской области. Более 20 лет опыта, работа без посредников, без предоплаты. Косметический и капитальный ремонт, white-box, ремонт в новостройке. Честные цены, помощь с материалами." />
+    <meta name="keywords" content="ремонт квартир Москва, ремонт под ключ, косметический ремонт, капитальный ремонт, ремонт квартир цена, мастер по ремонту, ремонт white-box, ремонт новостройка" />
+    <meta name="author" content="Ремонт квартир в Москве" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Russian" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href="https://remont-kvartir.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://remont-kvartir.com/" />
+    <meta property="og:title" content="Ремонт квартир в Москве под ключ | Профессиональный мастер" />
+    <meta property="og:description" content="Профессиональный ремонт квартир в Москве и Московской области. Более 20 лет опыта, работа без посредников, без предоплаты." />
+    <meta property="og:image" content="https://remont-kvartir.com/img/offer/bg1.png" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Ремонт квартир в Москве" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Ремонт квартир в Москве",
+            "description": "Профессиональный ремонт квартир в Москве и Московской области. Более 20 лет опыта, работа без посредников.",
+            "url": "https://remont-kvartir.com",
+            "telephone": "+79998248392",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Москва",
+                "addressRegion": "Московская область",
+                "addressCountry": "RU"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "55.7558",
+                "longitude": "37.6173"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "19:00"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Москва"
+            },
+            "serviceType": [
+                "Косметический ремонт",
+                "Капитальный ремонт",
+                "Ремонт white-box",
+                "Ремонт в новостройке"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "reviewCount": "50"
+            }
+        }
+    </script>
 
     <link rel="stylesheet" href="/styles/index.css">
 </head>
 
 <body>
     {% include "layouts/header.njk" %}
-14
+
     {% include "blocks/offer.njk" %}
 
     {% include "blocks/advantages.njk" %}
+
+    {% include "blocks/guarantee.njk" %}
+
+    {% include "blocks/reviews.njk" %}
 
     <!-- {% include "blocks/portfolio.njk" %} -->
 
     {% include "blocks/prices.njk" %}
 
+    {% include "blocks/cta.njk" %}
+
     {% include "layouts/footer.njk" %}
+
+    {% include "analytics.njk" %}
 </body>
 
 </html>

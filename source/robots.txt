@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://remont-kvartir.com/sitemap.xml
+
